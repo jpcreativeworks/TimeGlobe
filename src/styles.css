@@ -1,0 +1,39 @@
+body {
+  background-image: url('../images/DALLE_flags.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  padding-top: 100px;
+}
+.card {
+  background: #ffffff;
+  padding: 60px;
+  border-radius: 6px;
+  max-width: 700px;
+  box-shadow: 0 4px 10px (0, 0, 0, 0.6);
+  margin: 30px auto;
+}
+h1 {
+  font-family: "Faster One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 72px;
+  margin-top: -10px;
+}
+label {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100px;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+  padding: 15px 0;
+}
+select {
+  width: 100%;
+  padding: 8px;
+  font-size: 18px;
+}
