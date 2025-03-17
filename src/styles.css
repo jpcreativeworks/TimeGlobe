@@ -22,10 +22,13 @@ h1 {
   font-size: 72px;
   margin-top: -10px;
 }
-label {
-  display: block;
+label, footer {
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
+}
+
+label {
+  display: block;
   font-weight: 100px;
   font-style: normal;
   font-variation-settings:
@@ -36,4 +39,9 @@ select {
   width: 100%;
   padding: 8px;
   font-size: 18px;
+}
+footer {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 12px;
 }
