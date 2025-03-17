@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Faster+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Faster+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.46/moment-timezone-with-data-1970-2030.min.js"></script>
   <title>TimeGlobe</title>
   <link rel="stylesheet" href="./src/styles.css">
 </head>
@@ -18,8 +20,9 @@
     <label for="destination">
       Choose your destination to find out the time!
     </label>
-    <select name="destination" id="destination">
-      <option name="" value="">Destination</option>
+    <select name="destination" id="city-select">
+      <option name="" value="">Select a City</option>
+      <option name="" value="current-location">Current Location 📍</option>
       <option name="" value="southKorea">South Korea 🇰🇷</option>
       <option name="" value="spain">Spain 🇪🇸</option>
       <option name="" value="italy">Italy 🇮🇹</option>
@@ -29,6 +32,13 @@
       <option name="" value="canada">Canada 🇨🇦</option>
       <option name="" value="mexico">Mexico 🇲🇽</option>
     </select>
+    <div id="content">
+      <div class="selection">
+        <div id="city-selection">City</div>
+        <div id="current-date">date</div>
+      </div>
+      <div id="current-time">time</div>
+    </div>
     <footer>Created by <a href="https://github.com/jpcreativeworks?tab=repositories">Jenn Bencriscutto</a> code hosted on <a href="https://github.com/jpcreativeworks/TimeGlobe.git">GitHub</a> and site on <a href="https://timeglobe-foralltime.netlify.app/">Netlify</a></footer>
   </div>
 <script src="src/script.js"></script>

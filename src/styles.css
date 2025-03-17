@@ -22,7 +22,7 @@ h1 {
   font-size: 72px;
   margin-top: -10px;
 }
-label, footer {
+label, footer, #city-selection, #current-date, #current-time {
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
 }
@@ -39,6 +39,27 @@ select {
   width: 100%;
   padding: 8px;
   font-size: 18px;
+}
+#content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100hv;
+  padding: 20px;
+}
+.selection { 
+  text-align: left;
+}
+#city-selection {
+  font-size: 40px;
+}
+#current-date {
+  font-size: 14px;
+}
+#current-time {
+  text-align: right;
+  font-size: 32px;
+  font-weight: bolder
 }
 footer {
   text-align: center;
