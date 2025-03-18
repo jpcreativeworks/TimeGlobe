@@ -17,6 +17,7 @@ function updateTime() {
     "southKorea": "Asia/Seoul",
     "spain": "Europe/Madrid",
     "italy": "Europe/Rome",
+    "nepal": "Asia/Kathmandu",
     "domincan republic": "America/Santo_Domingo",
     "grenada": "America/Grenada",
     "cuba": "America/Havana",
