@@ -1,29 +1,56 @@
 let citySelect = document.querySelector("#city-select");
+let intervalID;
 
 function updateTime() {
+  clearInterval(intervalID);
+
   let selectedValue = citySelect.value; 
 
   if (selectedValue === "") {
-    document.querySelector("#city-selection").innerHTML = "City";
-    document.querySelector("#current-date").innerHTML = "Date";
-    document.querySelector("#current-time").innerHTML = "Time";
+    document.querySelector("#city-selection").innerHTML = "";
+    document.querySelector("#current-date").innerHTML = "";
+    document.querySelector("#current-time").innerHTML = "";
     return;
   }
+
+  let timeZoneMap = {
+    "southKorea": "Asia/Seoul",
+    "spain": "Europe/Madrid",
+    "italy": "Europe/Rome",
+    "domincan republic": "America/Santo_Domingo",
+    "grenada": "America/Grenada",
+    "cuba": "America/Havana",
+    "canada": "America/Toronto",
+    "mexico": "America/Mexico_City"
+  };
+
+  let selectedTimezone;
+  let selectedCity;
 
   if (selectedValue === "current-location") {
-    let localTimeZone = moment.tz.guess();
-    let localTime = moment().tz(localTimeZone).format("h:mm:ss A");
-    let localDate = moment().tz(localTimeZone).format("dddd, MMMM Do, YYYY");
-
-    document.querySelector("#city-selection").innerHTML = "Your Current Location 📍";
-    document.querySelector("#current-date").innerHTML = `Today is ${localDate}.`;
-    document.querySelector("#current-time").innerHTML = `${localTime}`;
+    selectedTimezone = moment.tz.guess();
+    selectedCity = "Your Current Location 📍"
+  } else {
+    selectedTimezone = timeZoneMap[selectedValue];
+    selectedCity = citySelect.options[citySelect.selectedIndex].text;
   }
 
-  setInterval(() => {
-    document.querySelector("#current-time").innerHTML = `${moment().tz(localTimeZone).format("h:mm:ss A")}`;},
-    1000);
-    return;
+  if (selectedTimezone) {
+    function updateClock() {
+      let cityTime = moment().tz(selectedTimezone).format("h:mm:ss A");
+      let cityDate = moment().tz(selectedTimezone).format("dddd, MMMM Do, YYYY")
+    
+    document.querySelector("#city-selection").innerHTML = selectedCity;
+    document.querySelector("#current-date").innerHTML = `Today is ${cityDate}.`;
+    document.querySelector("#current-time").innerHTML = `${cityTime}`;
+  }
+    
+  updateClock();
+  intervalID = setInterval(updateClock, 1000);
+  
+  }
 }
 
+
 citySelect.addEventListener("change", updateTime);
+updateTime();
